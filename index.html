@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links {
+      list-style: none;
+    }
+
+    .navbar .nav-links li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    .navbar .nav-links a {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #f7a400;
+    }
+
+    /* About Me Section */
+    .about-me {
+      background: linear-gradient(to top right, #4e73df, #1d8cc7);
+      color: #fff;
+      padding: 50px 20px;
+    }
+
+    .about-me h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about-me p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .about-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .profile-box .image-container img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .skills-box .language-icons img {
+      width: 50px;
+      margin: 0 10px;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box a {
+      color: #f7a400;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 80%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact form button {
+      padding: 12px 25px;
+      background-color: #4e73df;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact form button:hover {
+      background-color: #1d8cc7;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+    }
+
+    /* Projects Section */
+    .projects {
+      background-color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .project-info h3 {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .project-card .project-info p {
+      font-size: 16px;
+      color: #777;
+    }
+
+    .project-card .project-info a {
+      margin-top: 15px;
+      color: #f7a400;
+      font-weight: bold;
+    }
+
+    .project-card .project-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .projects .project-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .navbar .nav-links {
+        display: none;
+      }
+
+      .about-me {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects .project-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+
+  <!-- About Me Section -->
+  <div class="about-me" id="about">
+    <h2>About Me</h2>
+    <div class="about-box profile-box">
+      <div class="image-container">
+        <img src="images/profile.jpg" alt="Your Profile">
+      </div>
+      <div class="text-content">
+        <h3>Your Name</h3>
+        <p>Hi, I'm <strong>Naga Adithyaa</strong>! I'm a passionate Full Stack Developer with a deep love for coding and problem-solving...
+        </p>
+        <p>
+            Over the years, I've developed a strong skill set in JavaScript, Java, Python, and C++, among others. 
+            I love learning new technologies and frameworks to stay on top of industry trends. In addition to coding, 
+            I also enjoy working on personal projects, collaborating with like-minded developers, and contributing 
+            to open-source projects. I believe in continuous learning and improving my skills to stay ahead of the curve.
+          </p>
+      </div>
+    </div>
+
+    <div class="about-box skills-box">
+      <h3>Skills and Technologies</h3>
+      <p>Here's a list of languages and technologies that I have worked with:</p>
+      <div class="languages">
+        <div class="language-icons">
+          <img src="images/java-logo.png" alt="Java">
+          <img src="images/python-logo.png" alt="Python">
+          <img src="images/cpp-logo.png" alt="C++">
+          <img src="images/sql-logo.png" alt="SQL">
+          <img src="images/html-logo.png" alt="HTML">
+        </div>
+      </div>
+    </div>
+
+    <div class="about-box contact-box">
+      <h3>Let's Connect!</h3>
+      <p>Feel free to reach out to me for collaborations, job opportunities, or just to chat about technology. You can contact me via email or LinkedIn.</p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Other Ways to Reach Me</h3>
+      <p><strong>Email:</strong> nagaadithyaa13@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9342601467</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">github.com/your-username</a></p>
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="projects" id="projects">
+    <h2>My Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <img src="images/vaccum.jpg" alt="Automatic Vacuum Cleaner">
+        <div class="project-info">
+          <h3>Automatic Vacuum Cleaner</h3>
+          <p>This project involves creating an autonomous vacuum cleaner...</p>
+          <a href="https://github.com" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/finance.jpg" alt="Personal Finance Tracker">
+        <div class="project-info">
+          <h3>Personal Finance Tracker</h3>
+          <p>This web app helps users track their income...</p>
+          <a href="https://github.com" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/weather.jpg" alt="Weather Forecast App">
+        <div class="project-info">
+          <h3>Weather Forecast App</h3>
+          <p>A mobile app that provides users with real-time weather updates...</p>
+          <a href="https://github.com" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
